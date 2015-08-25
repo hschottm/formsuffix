@@ -19,23 +19,20 @@ namespace Contao;
  */
 class FormTextFieldSuffix extends FormTextField
 {
-/**
- * Generate the widget and return it as string
- * @return string
- */
-	public function generate()
+	/**
+	 * Initialize the object
+	 *
+	 * @param array $arrAttributes An optional attributes array
+	 */
+	public function __construct($arrAttributes=null)
 	{
-		$widget = parent::generate();
-		if (strlen($this->suffix))
-		{
-			if (strlen($this->addSubmit()))
-			{
-				$widget = str_replace($this->addSubmit(), '', $widget);
-			}
-			$widget = $widget . sprintf(' <span class="suffix">%s</span>', $this->suffix);
-			$widget .= $this->addSubmit();
-		}
-		return $widget;
+		$this->strTemplate = 'form_textfield_suffix';
+		parent::__construct($arrAttributes);
+	}
+	
+	public function hasSuffix()
+	{
+		return (strlen($this->suffix) > 0);
 	}
 }
 

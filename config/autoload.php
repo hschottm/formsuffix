@@ -2,12 +2,10 @@
 
 /**
  * Contao Open Source CMS
- * 
- * Copyright (C) 2005-2013 Leo Feyer
- * 
- * @package Formsuffix
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ *
+ * Copyright (c) 2005-2015 Leo Feyer
+ *
+ * @license LGPL-3.0+
  */
 
 
@@ -18,4 +16,12 @@ ClassLoader::addClasses(array
 (
 	// Forms
 	'Contao\FormTextFieldSuffix' => 'system/modules/formsuffix/forms/FormTextFieldSuffix.php',
+));
+
+/**
+ * Register the templates
+ */
+TemplateLoader::addFiles(array
+(
+	'form_textfield_suffix' => 'system/modules/formsuffix/templates',
 ));
